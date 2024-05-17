@@ -1,5 +1,10 @@
+from typing import Any
+
+
 # Taken from LC #208
 class TrieNode:
+    chars: list[Any]
+
     def __init__(self) -> None:
         # 26 letters, assumed to be all lowercase
         self.chars = [None] * 26

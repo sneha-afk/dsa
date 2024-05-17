@@ -1,2 +1,3 @@
 # dsa
-DSA implementations and notes.
+
+YADSAR (Yet Another DSA Reference)

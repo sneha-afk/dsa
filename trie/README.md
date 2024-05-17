@@ -4,11 +4,11 @@ A [trie](https://en.wikipedia.org/wiki/Trie) is "a form of string-indexed look-u
 
 ## Complexity
 
-| Category | Complexity |
-|----------|------------|
-| Time     | $O(n)$     |
-| Space    | $O(n)$     |
-| Insert   | $O(n)$     |
+| Category        | Complexity |
+|-----------------|------------|
+| Search time     | $O(n)$     |
+| Space           | $O(n)$     |
+| Insert          | $O(n)$     |
 
 
 ## Uses
