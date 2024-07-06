@@ -1,12 +1,12 @@
 # A singly-linked list traverses in one direction
 
 from typing import Any, Optional
-from util import Node
+from util import ListNode
 
 
 class SinglyLL:
-    head: Optional[Node]
-    tail: Optional[Node]
+    head: Optional[ListNode]
+    tail: Optional[ListNode]
 
     def __init__(self) -> None:
         self.head = self.tail = None
@@ -18,7 +18,7 @@ class SinglyLL:
         """
         Append an item at the end of this linked list
         """
-        n: Node = Node(item)
+        n: ListNode = ListNode(item)
 
         if self.tail is None:
             self.head = n
@@ -33,15 +33,15 @@ class SinglyLL:
         beginning of the list.
         """
 
-        cur: Optional[Node] = self.head
+        cur: Optional[ListNode] = self.head
         cur_i: int = 0
-        prev: Optional[Node] = cur
+        prev: Optional[ListNode] = cur
         while cur and cur_i < index:
             prev = cur
             cur = cur.next
             cur_i += 1
 
-        n: Node = Node(item, prev)
+        n: ListNode = ListNode(item, prev)
 
         if cur_i == 0:
             if self.head is None:
@@ -52,12 +52,12 @@ class SinglyLL:
                 self.head = n
             self.tail = n
 
-    def find(self, item: Any) -> Optional[Node]:
+    def find(self, item: Any) -> Optional[ListNode]:
         """
         Returns the node containing the item or None if not present
         """
 
-        cur: Optional[Node] = self.head
+        cur: Optional[ListNode] = self.head
         while cur:
             if cur.item == item:
                 return cur
@@ -76,8 +76,8 @@ class SinglyLL:
         No effect if the item is not present.
         """
 
-        cur: Optional[Node] = self.head
-        prev: Optional[Node] = cur
+        cur: Optional[ListNode] = self.head
+        prev: Optional[ListNode] = cur
         while cur:
             if cur.item == item:
                 if cur == self.head:
