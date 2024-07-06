@@ -41,3 +41,8 @@ class Stack:
         """
 
         return len(self.items)
+
+    def peek(self) -> Any:
+        if len(self.items) < 1:
+            return None
+        return self.items[-1]
