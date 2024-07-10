@@ -1,16 +1,4 @@
-from typing import Any
-
-
-# Taken from LC #208
-class TrieNode:
-    chars: list[Any]
-
-    def __init__(self) -> None:
-        # 26 letters, assumed to be all lowercase
-        self.chars = [None] * 26
-
-        # Is this the last character?
-        self.is_end = False
+from util import TrieNode
 
 
 class Trie:
@@ -22,6 +10,8 @@ class Trie:
     # "void insert(String word) Inserts the string word into the trie"
     def insert(self, word: str) -> None:
         curr = self.root
+
+        # Move down the trie by scanning each letter of the word
         for ch in word:
             ch_num = ord(ch) - ord("a")
 

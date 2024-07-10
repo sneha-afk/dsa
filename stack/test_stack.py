@@ -1,23 +1,23 @@
 import pytest
 
-from stack import Stack
+from . import Stack
 
-INITIAL_ITEMS = ["red", "blue", "green"]
+ITEMS: list[str] = ["red", "blue", "green"]
 
 
 @pytest.fixture
 def color_stack() -> Stack:
     s: Stack = Stack()
-    s.push_multiple(INITIAL_ITEMS)
+    s.push_multiple(ITEMS)
     return s
 
 
 def test_peek(color_stack: Stack):
-    assert color_stack.peek() == INITIAL_ITEMS[-1]
+    assert color_stack.peek() == ITEMS[-1]
 
 
 def test_size(color_stack: Stack):
-    assert color_stack.size() == len(INITIAL_ITEMS)
+    assert color_stack.size() == len(ITEMS)
 
 
 def test_push(color_stack: Stack):
@@ -26,7 +26,7 @@ def test_push(color_stack: Stack):
 
 
 def test_pop(color_stack: Stack):
-    assert color_stack.pop() == INITIAL_ITEMS[-1]
+    assert color_stack.pop() == ITEMS[-1]
 
 
 def test_push_multiple(color_stack: Stack):
