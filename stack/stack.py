@@ -39,10 +39,12 @@ class Stack:
         """
         Get the size (current number of items) on the stack.
         """
-
         return len(self.items)
 
     def peek(self) -> Any:
+        """
+        Returns element on the top of the stack, or None if the stack is empty.
+        """
         if len(self.items) < 1:
             return None
         return self.items[-1]
