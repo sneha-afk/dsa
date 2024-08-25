@@ -1,7 +1,6 @@
 # A generic Stack that can hold heterogenous elements
 
-from collections.abc import Sequence
-from typing import Any
+from typing import Any, Sequence
 
 
 class Stack:

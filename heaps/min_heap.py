@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Sequence
 
 
 class MinHeap:
@@ -16,6 +16,10 @@ class MinHeap:
         self.heap.append(val)
         self.size += 1
         self._percolate_up(self.size - 1)
+
+    def insert_multiple(self, vals: Sequence[Any]) -> None:
+        for v in vals:
+            self.insert(v)
 
     def extract_min(self) -> Any:
         """
@@ -59,9 +63,9 @@ class MinHeap:
         right_child = (2 * index) + 2
         smallest = index
 
-        if left_child < self.size and self.heap[left_child] < self.heap[index]:
+        if left_child < self.size and self.heap[left_child] < self.heap[smallest]:
             smallest = left_child
-        if right_child < self.size and self.heap[right_child] < self.heap[index]:
+        if right_child < self.size and self.heap[right_child] < self.heap[smallest]:
             smallest = right_child
 
         # Parent is not the largest, swap downwards
